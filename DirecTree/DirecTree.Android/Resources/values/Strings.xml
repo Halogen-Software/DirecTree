@@ -2,4 +2,5 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">DirecTree.Android</string>
+    <string name="GoogleMapsKey">AIzaSyC4CiEfE9B-Ue8U8AG09w7njNnx_Cs-sdc</string>
 </resources>
