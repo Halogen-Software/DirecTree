@@ -3,4 +3,6 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">DirecTree.Android</string>
     <string name="GoogleMapsKey">AIzaSyC4CiEfE9B-Ue8U8AG09w7njNnx_Cs-sdc</string>
+  <string name="openDrawer">DirecTree</string>
+  <string name="closeDrawer">DirecTree</string>
 </resources>

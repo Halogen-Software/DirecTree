@@ -1,24 +1,34 @@
+using Android;
 using Android.App;
 using Android.Gms.Maps;
 using Android.OS;
+using Android.Support.V4.Widget;
+using Android.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace DirecTree.Android.Views
 {
-    [Activity(Label = "DirecTree", Theme = "@style/MyTheme.MainTheme")]
+    [Activity(Label = "DirecTree", Icon = "@drawable/Icon2", Theme = "@style/MyTheme.MainTheme")]
     public class MainView : MvxAppCompatActivity, IOnMapReadyCallback
     {
-        private SupportToolbar _supportToolbar;
         private GoogleMap _map;
+        private MvxActionBarDrawerToggle _drawerToggle;
+        private DrawerLayout _drawerLayout;
         
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
             SetupMap();
-            _supportToolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(_supportToolbar);
+            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
+
+            _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.openDrawer, Resource.String.closeDrawer);
+
+            _drawerLayout.SetDrawerListener(_drawerToggle);
+            SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowTitleEnabled(true);
+            _drawerToggle.SyncState();
         }
 
         private void SetupMap()
@@ -32,6 +42,12 @@ namespace DirecTree.Android.Views
         public void OnMapReady(GoogleMap googleMap)
         {
             _map = googleMap;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            _drawerToggle.OnOptionsItemSelected(item);
+            return base.OnOptionsItemSelected(item);
         }
     }
 }
