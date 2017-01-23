@@ -1,3 +1,4 @@
+using DirecTree.Core.ViewModels;
 using MvvmCross.Platform.IoC;
 
 namespace DirecTree.Core
@@ -11,7 +12,7 @@ namespace DirecTree.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.MainViewModel>();
+            RegisterAppStart<MainViewModel>();
         }
     }
 }

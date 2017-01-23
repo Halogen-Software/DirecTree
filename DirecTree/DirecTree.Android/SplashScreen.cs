@@ -1,39 +1,21 @@
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using Android.Content.PM;
 using Android.OS;
 using Android.Util;
-using Android.Views;
 using DirecTree.Android.Views;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
 
-[Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
-public class SplashScreen : MvxActivity
+namespace DirecTree.Android
 {
-    static readonly string TAG = "X:" + typeof(SplashScreen).Name;
-
-    public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistentState)
+    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    public class SplashScreen : MvxSplashScreenActivity
     {
-        base.OnCreate(savedInstanceState, persistentState);
-        Log.Debug(TAG, "SplashActivity.OnCreate");
-    }
-
-    protected override void OnResume()
-    {
-        base.OnResume();
-
-        Task startupWork = new Task(() => {
-            Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
-            Task.Delay(1000);  // Simulate a bit of startup work.
-            Log.Debug(TAG, "Working in the background - important stuff.");
-        });
-
-        startupWork.ContinueWith(t => {
-            Log.Debug(TAG, "Work is finished - start Activity1.");
-            StartActivity(new Intent(Application.Context, typeof(MainView)));
-        }, TaskScheduler.FromCurrentSynchronizationContext());
-
-        startupWork.Start();
+        public SplashScreen()
+            : base(Resource.Layout.SplashScreen)
+        {
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace DirecTree.Android.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
-            SetupMap();
+            
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
 
             _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.openDrawer, Resource.String.closeDrawer);
@@ -29,6 +29,7 @@ namespace DirecTree.Android.Views
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             _drawerToggle.SyncState();
+            SetupMap();
         }
 
         private void SetupMap()
