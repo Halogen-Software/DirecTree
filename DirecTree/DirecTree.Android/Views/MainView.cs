@@ -1,20 +1,24 @@
 using Android.App;
 using Android.Gms.Maps;
 using Android.OS;
-using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace DirecTree.Android.Views
 {
-    [Activity(Label = "View for MainViewModel")]
-    public class MainView : MvxActivity, IOnMapReadyCallback
+    [Activity(Label = "DirecTree", Theme = "@style/MyTheme.MainTheme")]
+    public class MainView : MvxAppCompatActivity, IOnMapReadyCallback
     {
+        private SupportToolbar _supportToolbar;
         private GoogleMap _map;
+        
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
-
             SetupMap();
+            _supportToolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(_supportToolbar);
         }
 
         private void SetupMap()
@@ -22,7 +26,6 @@ namespace DirecTree.Android.Views
             if (_map == null)
             {
                 FragmentManager.FindFragmentById<MapFragment>(Resource.Id.googleMapsFragment).GetMapAsync(this);
-
             }
         }
 
