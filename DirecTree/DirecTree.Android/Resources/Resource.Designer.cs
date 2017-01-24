@@ -2223,9 +2223,6 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f030026
 			public const int support_simple_spinner_dropdown_item = 2130903078;
 			
-			// aapt resource value: 0x7f030027
-			public const int temp = 2130903079;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
