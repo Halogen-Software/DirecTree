@@ -18,6 +18,7 @@ namespace DirecTree.Android.Views
         private GoogleMap _map;
         private MvxActionBarDrawerToggle _drawerToggle;
         private DrawerLayout _drawerLayout;
+        private FrameLayout _isBusyOverlay;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -25,7 +26,7 @@ namespace DirecTree.Android.Views
             SetContentView(Resource.Layout.MainView);
 
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
-
+            _isBusyOverlay = FindViewById<FrameLayout>(Resource.Id.isBusyOverlay);
             _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.openDrawer,
                 Resource.String.closeDrawer);
 
@@ -51,22 +52,19 @@ namespace DirecTree.Android.Views
             _map = googleMap;
         }
 
-        public void NavigateToLocation()
+        private async void NavigateToLocation()
         {
-            var progressDialog = ProgressDialog.Show(this, "Please wait...", "We're trying to find you.", true);
-            new Thread(new ThreadStart(async delegate
-            {
-                var locator = CrossGeolocator.Current;
-                locator.DesiredAccuracy = 15;
-                var position = await locator.GetPositionAsync(10000);
-                _map.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(position.Latitude, position.Longitude)));
-                _map.AnimateCamera(CameraUpdateFactory.ZoomTo(15));
-                MarkerOptions currentLocationMarker = new MarkerOptions()
-                    .SetPosition(new LatLng(position.Latitude, position.Longitude))
-                    .SetTitle("My Location");
-                _map.AddMarker(currentLocationMarker);
-                RunOnUiThread(() => progressDialog.Hide());
-            })).Start();
+            _isBusyOverlay.Visibility = ViewStates.Visible;
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 15;
+            var position = await locator.GetPositionAsync(10000);
+            _map.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(position.Latitude, position.Longitude)));
+            _map.AnimateCamera(CameraUpdateFactory.ZoomTo(15));
+            MarkerOptions currentLocationMarker = new MarkerOptions()
+                .SetPosition(new LatLng(position.Latitude, position.Longitude))
+                .SetTitle("My Location");
+            _map.AddMarker(currentLocationMarker);
+            _isBusyOverlay.Visibility = ViewStates.Gone;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
