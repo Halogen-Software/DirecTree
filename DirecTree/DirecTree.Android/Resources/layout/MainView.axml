@@ -22,18 +22,33 @@
         android:layout_height="match_parent"
         tools:context=".MapsActivity" 
         android:name="com.google.android.gms.maps.MapFragment" />
-      <FrameLayout
+      <LinearLayout
         android:id="@+id/isBusyOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/vignetteBackGround"
         android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
         >
+        <Imageview
+          android:id="@+id/informationIcon"
+          android:layout_width="120dp"
+          android:layout_height="120dp"
+          android:src="@drawable/info"
+          android:gravity="center"
+          android:layout_margin="10dp"
+          android:elevation="3dp"
+          />
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Please wait... We're trying to find you"
+          android:textSize="30sp"
+          android:gravity="center"
           />
-        </FrameLayout>
+        </LinearLayout>
       </RelativeLayout>
     <Mvx.MvxListView
       android:id="@+id/sideBarMenuList"

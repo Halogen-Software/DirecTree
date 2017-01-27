@@ -6,8 +6,13 @@
   <style name="MyTheme.Splash" parent="MyTheme">
     <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
+    <item name="android:textViewStyle">@style/MyTextView</item>
    </style>
 
+  <style name="MyTextView" parent="@android:style/TextAppearance.Small">
+    <item name="android:textColor">#4C6374</item>
+  </style>
+  
   <style name="MyTheme.MainTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
     <item name="colorPrimary">#B4BFC9</item>
     <item name="actionBarStyle">@style/MyActionBar</item>

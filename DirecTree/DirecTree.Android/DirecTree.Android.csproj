@@ -193,6 +193,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Icon2.png" />
+    <AndroidResource Include="Resources\drawable\vignetteBackGround.png" />
+    <AndroidResource Include="Resources\drawable\globe.png" />
+    <AndroidResource Include="Resources\drawable\info.png" />
+    <AndroidResource Include="Resources\drawable\loader.png" />
+    <AndroidResource Include="Resources\drawable\globeDetailed.png" />
+    <AndroidResource Include="Resources\Anim\rotate_center.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

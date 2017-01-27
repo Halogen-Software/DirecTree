@@ -82,6 +82,9 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f040009
 			public const int abc_slide_out_top = 2130968585;
 			
+			// aapt resource value: 0x7f04000a
+			public const int rotate_center = 2130968586;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -1711,16 +1714,31 @@ namespace DirecTree.Android
 			public const int common_plus_signin_btn_text_light_pressed = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int Icon = 2130837615;
+			public const int globe = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Icon2 = 2130837616;
-			
-			// aapt resource value: 0x7f020072
-			public const int notification_template_icon_bg = 2130837618;
+			public const int globeDetailed = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int splash = 2130837617;
+			public const int Icon = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int Icon2 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int info = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int loader = 2130837620;
+			
+			// aapt resource value: 0x7f020077
+			public const int notification_template_icon_bg = 2130837623;
+			
+			// aapt resource value: 0x7f020075
+			public const int splash = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int vignetteBackGround = 2130837622;
 			
 			static Drawable()
 			{
@@ -1741,8 +1759,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b000a
 			public const int MvxBindingTagUnique = 2131427338;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int action0 = 2131427425;
+			// aapt resource value: 0x7f0b0062
+			public const int action0 = 2131427426;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int action_bar = 2131427406;
@@ -1768,8 +1786,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b004f
 			public const int action_context_bar = 2131427407;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int action_divider = 2131427429;
+			// aapt resource value: 0x7f0b0066
+			public const int action_divider = 2131427430;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1810,14 +1828,14 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0038
 			public const int buttonPanel = 2131427384;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int cancel_action = 2131427426;
+			// aapt resource value: 0x7f0b0063
+			public const int cancel_action = 2131427427;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int checkbox = 2131427398;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int chronometer = 2131427432;
+			// aapt resource value: 0x7f0b0069
+			public const int chronometer = 2131427433;
 			
 			// aapt resource value: 0x7f0b0029
 			public const int collapseActionView = 2131427369;
@@ -1849,8 +1867,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0026
 			public const int end = 2131427366;
 			
-			// aapt resource value: 0x7f0b006d
-			public const int end_padder = 2131427437;
+			// aapt resource value: 0x7f0b006e
+			public const int end_padder = 2131427438;
 			
 			// aapt resource value: 0x7f0b0032
 			public const int expand_activities_button = 2131427378;
@@ -1882,8 +1900,11 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0033
 			public const int image = 2131427379;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int info = 2131427436;
+			// aapt resource value: 0x7f0b006d
+			public const int info = 2131427437;
+			
+			// aapt resource value: 0x7f0b0060
+			public const int informationIcon = 2131427424;
 			
 			// aapt resource value: 0x7f0b005f
 			public const int isBusyOverlay = 2131427423;
@@ -1894,11 +1915,11 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0017
 			public const int light = 2131427351;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int line1 = 2131427430;
+			// aapt resource value: 0x7f0b0067
+			public const int line1 = 2131427431;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int line3 = 2131427434;
+			// aapt resource value: 0x7f0b006b
+			public const int line3 = 2131427435;
 			
 			// aapt resource value: 0x7f0b0018
 			public const int listMode = 2131427352;
@@ -1906,8 +1927,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0035
 			public const int list_item = 2131427381;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int media_actions = 2131427428;
+			// aapt resource value: 0x7f0b0065
+			public const int media_actions = 2131427429;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int middle = 2131427367;
@@ -1996,8 +2017,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b001e
 			public const int showTitle = 2131427358;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int sideBarMenuList = 2131427424;
+			// aapt resource value: 0x7f0b0061
+			public const int sideBarMenuList = 2131427425;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int spacer = 2131427385;
@@ -2017,8 +2038,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b0013
 			public const int standard = 2131427347;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int status_bar_latest_event_content = 2131427427;
+			// aapt resource value: 0x7f0b0064
+			public const int status_bar_latest_event_content = 2131427428;
 			
 			// aapt resource value: 0x7f0b0059
 			public const int submit_area = 2131427417;
@@ -2029,17 +2050,17 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0b000f
 			public const int terrain = 2131427343;
 			
-			// aapt resource value: 0x7f0b006b
-			public const int text = 2131427435;
+			// aapt resource value: 0x7f0b006c
+			public const int text = 2131427436;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int text2 = 2131427433;
+			// aapt resource value: 0x7f0b006a
+			public const int text2 = 2131427434;
 			
 			// aapt resource value: 0x7f0b0041
 			public const int textSpacerNoButtons = 2131427393;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int time = 2131427431;
+			// aapt resource value: 0x7f0b0068
+			public const int time = 2131427432;
 			
 			// aapt resource value: 0x7f0b0037
 			public const int title = 2131427383;
@@ -2242,6 +2263,12 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f050034
 			public const int ApplicationName = 2131034164;
 			
+			// aapt resource value: 0x7f050037
+			public const int CreditIcons = 2131034167;
+			
+			// aapt resource value: 0x7f050036
+			public const int Drawer = 2131034166;
+			
 			// aapt resource value: 0x7f050035
 			public const int GoogleMapsKey = 2131034165;
 			
@@ -2310,9 +2337,6 @@ namespace DirecTree.Android
 			
 			// aapt resource value: 0x7f050000
 			public const int auth_google_play_services_client_google_display_name = 2131034112;
-			
-			// aapt resource value: 0x7f050037
-			public const int closeDrawer = 2131034167;
 			
 			// aapt resource value: 0x7f050018
 			public const int common_google_play_services_api_unavailable_text = 2131034136;
@@ -2400,9 +2424,6 @@ namespace DirecTree.Android
 			
 			// aapt resource value: 0x7f05001e
 			public const int common_signin_button_text_long = 2131034142;
-			
-			// aapt resource value: 0x7f050036
-			public const int openDrawer = 2131034166;
 			
 			// aapt resource value: 0x7f050032
 			public const int status_bar_notification_info_overflow = 2131034162;
@@ -2852,17 +2873,20 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0a0073
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131361907;
 			
-			// aapt resource value: 0x7f0a0138
-			public const int DrawerArrowToggle = 2131362104;
+			// aapt resource value: 0x7f0a0139
+			public const int DrawerArrowToggle = 2131362105;
 			
-			// aapt resource value: 0x7f0a0136
-			public const int MyActionBar = 2131362102;
+			// aapt resource value: 0x7f0a0137
+			public const int MyActionBar = 2131362103;
+			
+			// aapt resource value: 0x7f0a0135
+			public const int MyTextView = 2131362101;
 			
 			// aapt resource value: 0x7f0a0133
 			public const int MyTheme = 2131362099;
 			
-			// aapt resource value: 0x7f0a0135
-			public const int MyTheme_MainTheme = 2131362101;
+			// aapt resource value: 0x7f0a0136
+			public const int MyTheme_MainTheme = 2131362102;
 			
 			// aapt resource value: 0x7f0a0134
 			public const int MyTheme_Splash = 2131362100;
@@ -3152,8 +3176,8 @@ namespace DirecTree.Android
 			// aapt resource value: 0x7f0a00ee
 			public const int ThemeOverlay_AppCompat_Light = 2131362030;
 			
-			// aapt resource value: 0x7f0a0137
-			public const int TitleTextStyle = 2131362103;
+			// aapt resource value: 0x7f0a0138
+			public const int TitleTextStyle = 2131362104;
 			
 			// aapt resource value: 0x7f0a00ef
 			public const int Widget_AppCompat_ActionBar = 2131362031;

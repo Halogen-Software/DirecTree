@@ -3,6 +3,6 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">DirecTree.Android</string>
     <string name="GoogleMapsKey">AIzaSyA0Rxl3RX_wBmq3FtJbdOb0pYIbWl4wVwg</string>
-  <string name="openDrawer">DirecTree</string>
-  <string name="closeDrawer">DirecTree</string>
+  <string name="Drawer">DirecTree</string>
+  <string name="CreditIcons">Appzgear, yupiramos from djvstock</string>
 </resources>

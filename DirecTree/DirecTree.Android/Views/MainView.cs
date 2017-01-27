@@ -1,4 +1,6 @@
+using System;
 using System.Threading;
+using System.Threading.Tasks;
 using Android;
 using Android.App;
 using Android.Gms.Maps;
@@ -6,6 +8,7 @@ using Android.Gms.Maps.Model;
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Views;
+using Android.Views.Animations;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using Plugin.Geolocator;
@@ -18,18 +21,16 @@ namespace DirecTree.Android.Views
         private GoogleMap _map;
         private MvxActionBarDrawerToggle _drawerToggle;
         private DrawerLayout _drawerLayout;
-        private FrameLayout _isBusyOverlay;
+        private LinearLayout _isBusyOverlay;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
-
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
-            _isBusyOverlay = FindViewById<FrameLayout>(Resource.Id.isBusyOverlay);
-            _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.openDrawer,
-                Resource.String.closeDrawer);
-
+            _isBusyOverlay = FindViewById<LinearLayout>(Resource.Id.isBusyOverlay);
+            _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.Drawer,
+                Resource.String.Drawer);
             _drawerLayout.SetDrawerListener(_drawerToggle);
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
