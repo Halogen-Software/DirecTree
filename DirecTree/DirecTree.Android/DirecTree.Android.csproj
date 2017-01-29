@@ -159,6 +159,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
+    <Compile Include="Views\LocationSyncView.cs" />
     <Compile Include="Views\MainView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,9 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\MainView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LocationSyncView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
