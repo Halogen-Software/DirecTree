@@ -203,6 +203,8 @@
     <AndroidResource Include="Resources\drawable\loader.png" />
     <AndroidResource Include="Resources\drawable\globeDetailed.png" />
     <AndroidResource Include="Resources\Anim\rotate_center.xml" />
+    <AndroidResource Include="Resources\Menu\menu.xml" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

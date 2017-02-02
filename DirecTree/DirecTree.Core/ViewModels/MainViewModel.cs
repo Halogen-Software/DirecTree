@@ -24,7 +24,6 @@ namespace DirecTree.Core.ViewModels
             SideBarListItems = new List<string>();
 
             SideBarListItems.Add("Home");
-            SideBarListItems.Add("Find A Service");
             SideBarListItems.Add("Settings");
             SideBarListItems.Add("Sign Out");
         }

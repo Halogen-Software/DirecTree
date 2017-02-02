@@ -35,6 +35,7 @@ namespace DirecTree.Android.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
+            MenuInflater menuInflater ;
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
             _isBusyOverlay = FindViewById<LinearLayout>(Resource.Id.isBusyOverlay);
             _sideBarMenu = FindViewById<MvxListView>(Resource.Id.sideBarMenuList);
@@ -51,6 +52,13 @@ namespace DirecTree.Android.Views
             _latitude = LocationSyncView._latitude;
             _sideBarMenu.ItemClick += NavigateSideBarCommand;
 
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater inflater = MenuInflater;
+            inflater.Inflate(Resource.Menu.menu, menu);
+            return true;
         }
 
         public void NavigateSideBarCommand(object sender, AdapterView.ItemClickEventArgs e)
