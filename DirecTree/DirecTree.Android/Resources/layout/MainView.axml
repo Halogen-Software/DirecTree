@@ -16,12 +16,24 @@
     <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
+
       <fragment
         android:id="@+id/googleMapsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MapsActivity" 
+        tools:context=".MapsActivity"
         android:name="com.google.android.gms.maps.MapFragment" />
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp"
+        >
+        <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Find a service"
+          />
+      </FrameLayout>
       <LinearLayout
         android:id="@+id/isBusyOverlay"
         android:layout_width="match_parent"
@@ -48,8 +60,8 @@
           android:textSize="30sp"
           android:gravity="center"
           />
-        </LinearLayout>
-      </RelativeLayout>
+      </LinearLayout>
+    </RelativeLayout>
     <Mvx.MvxListView
       android:id="@+id/sideBarMenuList"
       android:layout_width="250dp"
