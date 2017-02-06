@@ -12,15 +12,15 @@ using Android.Views;
 using Android.Views.Animations;
 using Android.Widget;
 using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using DirecTree.Android.Views.Base;
 
 namespace DirecTree.Android.Views
 {
     [Activity(Label = "DirecTree", Icon = "@drawable/Icon2", Theme = "@style/MyTheme.MainTheme")]
-    public class MainView : MvxAppCompatActivity, IOnMapReadyCallback
+    public class MainView : BaseView, IOnMapReadyCallback
     {
         private GoogleMap _map;
         private MvxActionBarDrawerToggle _drawerToggle;
@@ -35,7 +35,9 @@ namespace DirecTree.Android.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
-            MenuInflater menuInflater ;
+
+            var actionBar = SupportActionBar;
+
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
             _isBusyOverlay = FindViewById<LinearLayout>(Resource.Id.isBusyOverlay);
             _sideBarMenu = FindViewById<MvxListView>(Resource.Id.sideBarMenuList);
@@ -52,13 +54,6 @@ namespace DirecTree.Android.Views
             _latitude = LocationSyncView._latitude;
             _sideBarMenu.ItemClick += NavigateSideBarCommand;
 
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater inflater = MenuInflater;
-            inflater.Inflate(Resource.Menu.menu, menu);
-            return true;
         }
 
         public void NavigateSideBarCommand(object sender, AdapterView.ItemClickEventArgs e)

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:local="http://schemas.android.com/apk/res-auto">
 
   <item
       android:id="@+id/action_Recenter"
-      android:orderInCategory="100"
-      android:showAsAction="always"
+      local:showAsAction="always"
       android:icon="@drawable/loader"
-      android:title="Refresh"/>
+      android:title="Recenter"/>
   <item
       android:id="@+id/action_Settings"
-      android:showAsAction="always"
+      local:showAsAction="always"
       android:icon="@drawable/settings"
       android:title="Settings">
   </item>
