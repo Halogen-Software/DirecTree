@@ -160,6 +160,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
     <Compile Include="Views\LocationSyncView.cs" />
+    <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\MainView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +174,7 @@
     <AndroidResource Include="Resources\layout\LocationSyncView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\SettingsView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">
@@ -202,7 +204,9 @@
     <AndroidResource Include="Resources\drawable\info.png" />
     <AndroidResource Include="Resources\drawable\loader.png" />
     <AndroidResource Include="Resources\drawable\globeDetailed.png" />
-    <AndroidResource Include="Resources\Anim\rotate_center.xml" />
+    <AndroidResource Include="Resources\Anim\rotate_center.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Menu\menu.xml" />
     <AndroidResource Include="Resources\drawable\settings.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
