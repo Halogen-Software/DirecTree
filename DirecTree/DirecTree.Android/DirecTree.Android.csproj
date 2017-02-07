@@ -209,6 +209,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\Menu\menu.xml" />
     <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\values\Colors.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

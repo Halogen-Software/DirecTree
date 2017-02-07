@@ -16,6 +16,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using DirecTree.Android.Views.Base;
+using Android.Content;
 
 namespace DirecTree.Android.Views
 {
@@ -30,6 +31,7 @@ namespace DirecTree.Android.Views
         private bool _hasGpsEnabled = false;
         private double _longitude;
         private double _latitude;
+        private ISharedPreferences _preferences;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -49,7 +51,9 @@ namespace DirecTree.Android.Views
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             _drawerToggle.SyncState();
             SetupMap();
-            NavigateToLocation();
+            _preferences = GetSharedPreferences(SettingsView.DefaultPreferences, 0);
+            if (!_preferences.GetBoolean(SettingsView.RETRIEVE_LOCATION_ON_STARTUP, false))
+                NavigateToLocation();
             _longitude = LocationSyncView._longitude;
             _latitude = LocationSyncView._latitude;
             _sideBarMenu.ItemClick += NavigateSideBarCommand;

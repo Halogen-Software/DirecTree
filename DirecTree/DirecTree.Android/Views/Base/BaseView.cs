@@ -1,8 +1,9 @@
 using Android.Content;
 using Android.OS;
 using Android.Views;
+using DirecTree.Core.ViewModels;
+using DirecTree.Core.ViewModels.Base;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Views;
 
 namespace DirecTree.Android.Views.Base
 {
@@ -21,6 +22,19 @@ namespace DirecTree.Android.Views.Base
             MenuInflater inflater = MenuInflater;
             inflater.Inflate(Resource.Menu.menu, menu);
             return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId) {
+                case Resource.Id.action_Settings:
+                    ((BaseViewModel) ViewModel).NavigateToSettings.Execute(this);
+                    break;
+                case Resource.Id.action_Recenter:
+                    ((BaseViewModel) ViewModel).NavigateToLocationSync.Execute(this);
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
         }
     }
 }

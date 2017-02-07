@@ -11,7 +11,8 @@
       android:id="@+id/action_Settings"
       local:showAsAction="always"
       android:icon="@drawable/settings"
-      android:title="Settings">
+      android:title="Settings"
+      local:MvxBind="Click NavigateToSettings">
   </item>
 
 </menu>

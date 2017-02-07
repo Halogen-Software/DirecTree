@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/splash"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TextView
-        android:layout_width="fill_parent"
+    android:background="@color/DirectreeBackgroundColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:orientation="horizontal">
+      <Textview
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Loading...." />
+        android:text="Sync location on startup"
+        android:layout_weight="1"/>
+      <CheckBox
+        android:id="@+id/syncLocationToggle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        local:MvxBind="Checked RetrieveLocationOnStartUp"
+        />
+    </LinearLayout>
+
 </LinearLayout>

@@ -3,7 +3,7 @@ using DirecTree.Core.ViewModels.Base;
 
 namespace DirecTree.Core.ViewModels
 {
-    public class MainViewModel 
+    public class MainViewModel
         : BaseViewModel
     {
         public MainViewModel()
@@ -11,12 +11,12 @@ namespace DirecTree.Core.ViewModels
             SetupListItems();
         }
 
-        private string value; 
+        private string value;
         private List<string> _sideBarListItems;
         public List<string> SideBarListItems
-        { 
+        {
             get { return _sideBarListItems; }
-            set { SetProperty (ref _sideBarListItems, value); }
+            set { SetProperty(ref _sideBarListItems, value); }
         }
 
         private void SetupListItems()
@@ -24,8 +24,7 @@ namespace DirecTree.Core.ViewModels
             SideBarListItems = new List<string>();
 
             SideBarListItems.Add("Home");
-            SideBarListItems.Add("Settings");
-            SideBarListItems.Add("Sign Out");
+            SideBarListItems.Add("Sign in");
         }
     }
 }

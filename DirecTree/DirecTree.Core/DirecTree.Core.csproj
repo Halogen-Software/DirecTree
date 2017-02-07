@@ -37,6 +37,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\LocationSyncViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>

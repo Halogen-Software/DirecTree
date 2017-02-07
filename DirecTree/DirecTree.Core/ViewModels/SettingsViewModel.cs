@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using DirecTree.Core.ViewModels.Base;
+using MvvmCross.Core.ViewModels;
+using System.Windows.Input;
 
 namespace DirecTree.Core.ViewModels
 {
@@ -17,9 +19,17 @@ namespace DirecTree.Core.ViewModels
             }
             set {
                 _retrieveLocationOnStartUp = value;
+                RaisePropertyChanged(() => RetrieveLocationOnStartUp);
             }
         }
 
+        public ICommand SetLocationSyncToggleSetting => new MvxCommand(SaveLocationToggleState);
 
+        private void SaveLocationToggleState() {
+            if (RetrieveLocationOnStartUp)
+                RetrieveLocationOnStartUp = false;
+            else
+                RetrieveLocationOnStartUp = true;
+        }
     }
 }
