@@ -51,7 +51,7 @@ namespace DirecTree.Android.Views
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             _drawerToggle.SyncState();
             SetupMap();
-            _preferences = GetSharedPreferences(SettingsView.DefaultPreferences, 0);
+            _preferences = GetSharedPreferences(SettingsView.DefaultPreferences, FileCreationMode.Private);
             if (!_preferences.GetBoolean(SettingsView.RETRIEVE_LOCATION_ON_STARTUP, false))
                 NavigateToLocation();
             _longitude = LocationSyncView._longitude;

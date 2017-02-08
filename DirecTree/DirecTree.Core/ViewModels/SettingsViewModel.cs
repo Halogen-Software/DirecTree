@@ -22,14 +22,5 @@ namespace DirecTree.Core.ViewModels
                 RaisePropertyChanged(() => RetrieveLocationOnStartUp);
             }
         }
-
-        public ICommand SetLocationSyncToggleSetting => new MvxCommand(SaveLocationToggleState);
-
-        private void SaveLocationToggleState() {
-            if (RetrieveLocationOnStartUp)
-                RetrieveLocationOnStartUp = false;
-            else
-                RetrieveLocationOnStartUp = true;
-        }
     }
 }

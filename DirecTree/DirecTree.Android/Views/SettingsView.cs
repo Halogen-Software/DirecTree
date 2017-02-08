@@ -30,32 +30,23 @@ namespace DirecTree.Android.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.SettingsView);
-            _preferences = GetSharedPreferences(DefaultPreferences, 0);
+            _preferences = Application.Context.GetSharedPreferences(DefaultPreferences, FileCreationMode.Private);
             _editor = _preferences.Edit();
             _syncLocationCheckBox = FindViewById<CheckBox>(Resource.Id.syncLocationToggle);
-            SetupBindings();
             SetupUserSettings();
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-            SetupBindings();
             SetupUserSettings();
-        }
-
-        private void SetupBindings() {
-            this.CreateBinding(this)
-                .For(view => view.RetrieveLocationOnStartUp)
-                .To<SettingsViewModel>(vm => vm.RetrieveLocationOnStartUp)
-                .Apply();
         }
 
         private void SetupUserSettings() {
             if (_preferences.GetBoolean(RETRIEVE_LOCATION_ON_STARTUP, false))
-                _syncLocationCheckBox.Checked = true;
-            else
                 _syncLocationCheckBox.Checked = false;
+            else
+                _syncLocationCheckBox.Checked = true;
         }
 
         public override void OnBackPressed()
@@ -64,11 +55,13 @@ namespace DirecTree.Android.Views
 
             if (_syncLocationCheckBox.Checked)
             {
-                _editor.PutBoolean(RETRIEVE_LOCATION_ON_STARTUP, true);
+                _editor.PutBoolean(RETRIEVE_LOCATION_ON_STARTUP, false);
+                _editor.Apply();
             }
             else
             {
-                _editor.PutBoolean(RETRIEVE_LOCATION_ON_STARTUP, false);
+                _editor.PutBoolean(RETRIEVE_LOCATION_ON_STARTUP, true);
+                _editor.Apply();
             }
         }
     }
