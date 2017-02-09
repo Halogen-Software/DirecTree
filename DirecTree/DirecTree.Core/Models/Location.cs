@@ -9,7 +9,7 @@ namespace DirecTree.Core.Models
     public class Location
     {
         public long Id { get; set; }
-        public long ServiceProviderId { get; set; }
+        public long VendorId { get; set; }
         public double GpsLongitude { get; set; }
         public double GpsLatitude { get; set; }
     }

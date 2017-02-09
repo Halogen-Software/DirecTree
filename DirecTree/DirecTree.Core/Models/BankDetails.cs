@@ -9,7 +9,7 @@ namespace DirecTree.Core.Models
     public class BankDetails
     {
         public long Id { get; set; }
-        public long ServiceProviderId { get; set; }
+        public long VendorId { get; set; }
         public string BankName { get; set; }
         public string BranchCode { get; set; }
         public string BranchName { get; set; }

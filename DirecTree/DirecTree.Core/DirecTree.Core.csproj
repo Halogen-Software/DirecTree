@@ -35,11 +35,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DevTests\DevOptions.cs" />
     <Compile Include="Models\BankDetails.cs" />
+    <Compile Include="Models\VendorService.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\ServiceProvider.cs" />
+    <Compile Include="Models\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\ServiceProviderDetailViewModel.cs" />
+    <Compile Include="ViewModels\ServiceProviderCreateViewModel.cs" />
     <Compile Include="ViewModels\LocationSyncViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
