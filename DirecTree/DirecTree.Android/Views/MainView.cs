@@ -17,6 +17,8 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using DirecTree.Android.Views.Base;
 using Android.Content;
+using MvvmCross.Droid.Support.V7.Fragging.Caching;
+using DirecTree.Android.Views.Fragments;
 
 namespace DirecTree.Android.Views
 {
@@ -32,6 +34,7 @@ namespace DirecTree.Android.Views
         private double _longitude;
         private double _latitude;
         private ISharedPreferences _preferences;
+        private FrameLayout _fragmentHolder;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,6 +46,7 @@ namespace DirecTree.Android.Views
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
             _isBusyOverlay = FindViewById<LinearLayout>(Resource.Id.isBusyOverlay);
             _sideBarMenu = FindViewById<MvxListView>(Resource.Id.sideBarMenuList);
+            _fragmentHolder = FindViewById<FrameLayout>(Resource.Id.fragmentHolder);
             _drawerToggle = new MvxActionBarDrawerToggle(this, _drawerLayout, Resource.String.Drawer,
                 Resource.String.Drawer);
             _drawerLayout.SetDrawerListener(_drawerToggle);
@@ -132,18 +136,15 @@ namespace DirecTree.Android.Views
             switch (position)
             {
                 case 0:
+                    if(_fragmentHolder.Visibility != ViewStates.Gone)
+                        _fragmentHolder.Visibility = ViewStates.Gone;
+                    break;
+                case 1:
+                    SignInFragment signInFragment = new SignInFragment();
+                    ShowFragment(signInFragment, _fragmentHolder);
 
-                    StartActivity(typeof(LocationSyncView));
-                    if (!LocationSyncView._longitude.Equals(_longitude) && LocationSyncView._latitude.Equals(_latitude))
-                    {
-                        _map.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(_latitude, _longitude)));
-                        _map.AnimateCamera(CameraUpdateFactory.ZoomTo(15));
-                        MarkerOptions currentLocationMarker = new MarkerOptions()
-                            .SetPosition(new LatLng(_latitude, _longitude))
-                            .SetTitle("My Location");
-                        _map.AddMarker(currentLocationMarker);
-                        _hasGpsEnabled = true;
-                    }
+                    if(_fragmentHolder.Visibility != ViewStates.Visible)
+                        _fragmentHolder.Visibility = ViewStates.Visible;
                     break;
             }
         }

@@ -158,7 +158,9 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\Base\BaseFragment.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
+    <Compile Include="Views\Fragments\SignInFragment.cs" />
     <Compile Include="Views\LocationSyncView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\MainView.cs" />
@@ -175,6 +177,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SettingsView.axml" />
+    <AndroidResource Include="Resources\layout\SignInFragment.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">

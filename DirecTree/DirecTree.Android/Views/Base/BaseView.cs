@@ -1,9 +1,11 @@
 using Android.Content;
 using Android.OS;
+using Android.Support.V4.App;
 using Android.Views;
-using DirecTree.Core.ViewModels;
+using Android.Widget;
 using DirecTree.Core.ViewModels.Base;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 
 namespace DirecTree.Android.Views.Base
 {
@@ -35,6 +37,13 @@ namespace DirecTree.Android.Views.Base
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        public void ShowFragment(MvxFragment fragment, FrameLayout frameLayout)
+        {
+            var transaction = SupportFragmentManager.BeginTransaction();
+            transaction.Add(frameLayout.Id, fragment);
+            transaction.Commit();
         }
     }
 }

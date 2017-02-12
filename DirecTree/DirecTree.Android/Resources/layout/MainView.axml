@@ -16,7 +16,6 @@
     <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
-
       <fragment
         android:id="@+id/googleMapsFragment"
         android:layout_width="match_parent"
@@ -61,6 +60,13 @@
           android:gravity="center"
           />
       </LinearLayout>
+      
+      <FrameLayout
+        android:id="@+id/fragmentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+      
     </RelativeLayout>
     <Mvx.MvxListView
       android:id="@+id/sideBarMenuList"
