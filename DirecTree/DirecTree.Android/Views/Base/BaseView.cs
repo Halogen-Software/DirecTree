@@ -1,6 +1,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.V4.App;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using DirecTree.Core.ViewModels.Base;
@@ -9,9 +10,10 @@ using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 
 namespace DirecTree.Android.Views.Base
 {
-    public class BaseView : MvxAppCompatActivity
+    public class BaseView : AppCompatActivity
     {
         public Context context;
+        private MvxFragment _currentFragment;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -30,20 +32,21 @@ namespace DirecTree.Android.Views.Base
         {
             switch (item.ItemId) {
                 case Resource.Id.action_Settings:
-                    ((BaseViewModel) ViewModel).NavigateToSettings.Execute(this);
+                    //((BaseViewModel) ViewModel).NavigateToSettings.Execute(this);
                     break;
                 case Resource.Id.action_Recenter:
-                    ((BaseViewModel) ViewModel).NavigateToLocationSync.Execute(this);
+                    //((BaseViewModel) ViewModel).NavigateToLocationSync.Execute(this);
                     break;
             }
             return base.OnOptionsItemSelected(item);
         }
 
-        public void ShowFragment(MvxFragment fragment, FrameLayout frameLayout)
+        public void ShowFragment(int fragmentHolderId, MvxFragment fragment)
         {
-            var transaction = SupportFragmentManager.BeginTransaction();
-            transaction.Add(frameLayout.Id, fragment);
+            FragmentTransaction transaction = SupportFragmentManager.BeginTransaction();
+            transaction.Add(fragmentHolderId, fragment);
             transaction.Commit();
+            _currentFragment = fragment;
         }
     }
 }

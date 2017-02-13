@@ -1,4 +1,5 @@
 using Android.OS;
+using Android.Runtime;
 using Android.Views;
 using DirecTree.Android.Views.Base;
 using DirecTree.Core.ViewModels;
@@ -8,6 +9,7 @@ using MvvmCross.Platform;
 
 namespace DirecTree.Android.Views.Fragments
 {
+    [Register("directree.android.views.fragments.SignInFragment")]
     public class SignInFragment : BaseFragment
     {
         public override IMvxViewModel ViewModel => Mvx.Resolve<SignInViewModel>();

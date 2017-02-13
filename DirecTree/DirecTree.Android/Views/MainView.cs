@@ -1,15 +1,9 @@
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Android;
 using Android.App;
-using Android.Bluetooth;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using Android.OS;
-using Android.Support.V4.Widget;
 using Android.Views;
-using Android.Views.Animations;
 using Android.Widget;
 using MvvmCross.Binding.Droid.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
@@ -17,8 +11,8 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using DirecTree.Android.Views.Base;
 using Android.Content;
-using MvvmCross.Droid.Support.V7.Fragging.Caching;
 using DirecTree.Android.Views.Fragments;
+using Android.Support.V4.Widget;
 
 namespace DirecTree.Android.Views
 {
@@ -141,7 +135,7 @@ namespace DirecTree.Android.Views
                     break;
                 case 1:
                     SignInFragment signInFragment = new SignInFragment();
-                    ShowFragment(signInFragment, _fragmentHolder);
+                    ShowFragment(_fragmentHolder.Id, signInFragment);
 
                     if(_fragmentHolder.Visibility != ViewStates.Visible)
                         _fragmentHolder.Visibility = ViewStates.Visible;
