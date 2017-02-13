@@ -10,7 +10,7 @@ using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 
 namespace DirecTree.Android.Views.Base
 {
-    public class BaseView : AppCompatActivity
+    public class BaseView : MvxAppCompatActivity
     {
         public Context context;
         private MvxFragment _currentFragment;
@@ -32,10 +32,10 @@ namespace DirecTree.Android.Views.Base
         {
             switch (item.ItemId) {
                 case Resource.Id.action_Settings:
-                    //((BaseViewModel) ViewModel).NavigateToSettings.Execute(this);
+                    ((BaseViewModel) ViewModel).NavigateToSettings.Execute(this);
                     break;
                 case Resource.Id.action_Recenter:
-                    //((BaseViewModel) ViewModel).NavigateToLocationSync.Execute(this);
+                    ((BaseViewModel) ViewModel).NavigateToLocationSync.Execute(this);
                     break;
             }
             return base.OnOptionsItemSelected(item);
