@@ -1,9 +1,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.V4.App;
-using Android.Support.V7.App;
 using Android.Views;
-using Android.Widget;
 using DirecTree.Core.ViewModels.Base;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
