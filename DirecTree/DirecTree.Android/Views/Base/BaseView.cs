@@ -19,7 +19,7 @@ namespace DirecTree.Android.Views.Base
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            HomeViewModel = Mvx.Resolve<MainViewModel>();
+            
             context = this;
             InvalidateOptionsMenu();
         }

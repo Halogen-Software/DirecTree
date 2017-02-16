@@ -13,6 +13,7 @@ using DirecTree.Android.Views.Base;
 using Android.Content;
 using DirecTree.Android.Views.Fragments;
 using Android.Support.V4.Widget;
+using DirecTree.Core.ViewModels;
 
 namespace DirecTree.Android.Views
 {
@@ -34,7 +35,7 @@ namespace DirecTree.Android.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
-
+            HomeViewModel = DataContext as MainViewModel;
             var actionBar = SupportActionBar;
 
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
