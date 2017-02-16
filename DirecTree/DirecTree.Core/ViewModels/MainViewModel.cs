@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DirecTree.Core.ViewModels.Base;
+using MvvmCross.Core.ViewModels;
 
 namespace DirecTree.Core.ViewModels
 {

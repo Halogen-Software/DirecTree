@@ -134,11 +134,7 @@ namespace DirecTree.Android.Views
                         _fragmentHolder.Visibility = ViewStates.Gone;
                     break;
                 case 1:
-                    SignInFragment signInFragment = new SignInFragment();
-                    ShowFragment(_fragmentHolder.Id, signInFragment);
-
-                    if(_fragmentHolder.Visibility != ViewStates.Visible)
-                        _fragmentHolder.Visibility = ViewStates.Visible;
+                    HomeViewModel.NavigateToSignIn.Execute(null);
                     break;
             }
         }

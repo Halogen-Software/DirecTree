@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/signinBackground"
+    android:layout_width= "fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+    <ImageView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:src="@drawable/Icon"
+      android:layout_margin="10dp"
+    />
+    <EditText
+      android:layout_width="300dp"
+      android:layout_height="40dp"
+      android:hint="Username or Email"
+      android:textSize="16sp"
+      android:background="@drawable/white_text_box"
+      android:layout_margin="5dp"
+      />
+    <EditText
+      android:layout_width="300dp"
+      android:layout_height="40dp"
+      android:hint="Password"
+      android:textSize="16sp"
+      android:inputType="textPassword"
+      android:background="@drawable/white_text_box"
+      android:layout_margin="5dp"
+      />
+    <Button
+      android:layout_width="100dp"
+      android:layout_height="45dp"
+      android:text="Sign in"
+      android:textSize="16sp"
+      android:textColor="@color/DirectreeBackgroundColor"
+      android:layout_margin="5dp"
+      />
+  
+</LinearLayout>

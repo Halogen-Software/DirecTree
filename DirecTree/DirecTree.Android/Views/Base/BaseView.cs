@@ -2,19 +2,24 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
+using DirecTree.Core.ViewModels;
 using DirecTree.Core.ViewModels.Base;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+using MvvmCross.Platform;
 
 namespace DirecTree.Android.Views.Base
 {
     public class BaseView : MvxAppCompatActivity
     {
+        public MainViewModel HomeViewModel { get; set; }
         public Context context;
         private MvxFragment _currentFragment;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            HomeViewModel = Mvx.Resolve<MainViewModel>();
             context = this;
             InvalidateOptionsMenu();
         }

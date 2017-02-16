@@ -13,8 +13,14 @@ namespace DirecTree.Core.ViewModels.Base
 
         public ICommand NavigateToLocationSync => new MvxCommand(LaunchLocationSyncActivity);
 
-        public void LaunchLocationSyncActivity() {
+        private void LaunchLocationSyncActivity() {
             ShowViewModel<LocationSyncViewModel>();
+        }
+
+        public ICommand NavigateToSignIn => new MvxCommand(LaunchSignInActivity);
+
+        private void LaunchSignInActivity() {
+            ShowViewModel<SignInViewModel>();
         }
     }
 }

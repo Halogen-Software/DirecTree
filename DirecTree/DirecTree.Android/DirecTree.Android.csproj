@@ -197,7 +197,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseFragment.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
-    <Compile Include="Views\Fragments\SignInFragment.cs" />
+    <Compile Include="Views\SignInView.cs" />
     <Compile Include="Views\LocationSyncView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\MainView.cs" />
@@ -214,7 +214,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SettingsView.axml" />
-    <AndroidResource Include="Resources\layout\SignInFragment.axml" />
+    <AndroidResource Include="Resources\layout\SignInView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">
@@ -252,6 +252,10 @@
     <AndroidResource Include="Resources\values\Colors.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\signinBackground.png" />
+    <AndroidResource Include="Resources\drawable\signinBackgroundBlurred.png" />
+    <AndroidResource Include="Resources\drawable\white_text_box.xml" />
+    <AndroidResource Include="Resources\drawable\green_rounded_button.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
+    <Folder Include="Views\Fragments\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />
