@@ -35,6 +35,7 @@
       android:textSize="16sp"
       android:textColor="@color/DirectreeBackgroundColor"
       android:layout_margin="5dp"
+      android:background="@drawable/green_rounded_button"
       />
   
 </LinearLayout>

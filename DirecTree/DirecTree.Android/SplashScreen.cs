@@ -17,5 +17,11 @@ namespace DirecTree.Android
             : base(Resource.Layout.SplashScreen)
         {
         }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (bitmap)
+        }
     }
 }

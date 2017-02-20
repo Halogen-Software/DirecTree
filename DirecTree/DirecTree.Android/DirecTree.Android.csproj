@@ -53,6 +53,10 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Glide, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glide.Xamarin.3.7.0\lib\Glide.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
