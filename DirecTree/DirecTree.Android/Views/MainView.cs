@@ -17,7 +17,7 @@ using DirecTree.Core.ViewModels;
 
 namespace DirecTree.Android.Views
 {
-    [Activity(Label = "DirecTree", Icon = "@drawable/Icon2", Theme = "@style/MyTheme.MainTheme")]
+    [Activity(Label = "DirecTree", Theme = "@style/MyTheme.MainTheme")]
     public class MainView : BaseView, IOnMapReadyCallback
     {
         private GoogleMap _map;

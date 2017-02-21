@@ -21,7 +21,7 @@ namespace DirecTree.Android
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            if (bitmap)
+            Window.SetBackgroundDrawableResource(Resource.Drawable.zero);
         }
     }
 }

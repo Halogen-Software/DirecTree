@@ -5,12 +5,12 @@
   <item
       android:id="@+id/action_Recenter"
       local:showAsAction="always"
-      android:icon="@drawable/loader"
+      android:icon="@drawable/ic_loader"
       android:title="Recenter"/>
   <item
       android:id="@+id/action_Settings"
       local:showAsAction="always"
-      android:icon="@drawable/settings"
+      android:icon="@drawable/ic_settings"
       android:title="Settings"
       local:MvxBind="Click NavigateToSettings">
   </item>

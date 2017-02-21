@@ -10,7 +10,7 @@ using MvvmCross.Droid.Views;
 
 namespace DirecTree.Android.Views
 {
-    [Activity(Label = "Settings", Icon = "@drawable/Icon2", Theme = "@style/MyTheme.MainTheme")]
+    [Activity(Label = "Settings", Theme = "@style/MyTheme.MainTheme")]
     public class SettingsView : MvxActivity
     {
         public static string DefaultPreferences => "defaultPreferences";

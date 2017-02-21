@@ -53,10 +53,6 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Glide, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Glide.Xamarin.3.7.0\lib\Glide.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
@@ -242,17 +238,14 @@
     <AndroidResource Include="Resources\values\Style.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\Icon2.png" />
     <AndroidResource Include="Resources\drawable\vignetteBackGround.png" />
     <AndroidResource Include="Resources\drawable\globe.png" />
     <AndroidResource Include="Resources\drawable\info.png" />
-    <AndroidResource Include="Resources\drawable\loader.png" />
     <AndroidResource Include="Resources\drawable\globeDetailed.png" />
     <AndroidResource Include="Resources\Anim\rotate_center.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Menu\menu.xml" />
-    <AndroidResource Include="Resources\drawable\settings.png" />
     <AndroidResource Include="Resources\values\Colors.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -260,6 +253,17 @@
     <AndroidResource Include="Resources\drawable\signinBackgroundBlurred.png" />
     <AndroidResource Include="Resources\drawable\white_text_box.xml" />
     <AndroidResource Include="Resources\drawable\green_rounded_button.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_loader.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_loader.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_loader.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_loader.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_loader.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable\zero.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
