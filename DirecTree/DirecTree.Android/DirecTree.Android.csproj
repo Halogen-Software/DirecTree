@@ -214,15 +214,14 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SettingsView.axml" />
-    <AndroidResource Include="Resources\layout\SignInView.axml" />
+    <AndroidResource Include="Resources\layout\SignInView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -245,7 +244,9 @@
     <AndroidResource Include="Resources\Anim\rotate_center.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Menu\menu.xml" />
+    <AndroidResource Include="Resources\Menu\menu.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\Colors.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -264,6 +265,11 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_loader.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\drawable\zero.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
