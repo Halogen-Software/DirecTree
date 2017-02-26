@@ -9,13 +9,15 @@ namespace DirecTree.Core.DevTests
 {
     public class DevOptions
     {
-        public static List<Vendor> DevVendorList { get; set; }
-
-        public DevOptions() {
-            DevVendorList = CreateDevVendorList();
+        public static List<Vendor> DevVendorList { get {
+                return CreateDevVendorList();
+            }
         }
 
-        public List<Vendor> CreateDevVendorList() {
+        public DevOptions() {
+        }
+
+        public static List<Vendor> CreateDevVendorList() {
             Vendor vendor = new Vendor();
             vendor.Id = 1;
             vendor.CompanyName = "Awesome Dev Company";
@@ -36,7 +38,7 @@ namespace DirecTree.Core.DevTests
             return vendorList;       
         }
 
-        public List<VendorService> CreateDevVendorServiceList() {
+        private static List<VendorService> CreateDevVendorServiceList() {
             List<VendorService> services = new List<VendorService>();
 
             VendorService cleaningService = new VendorService();

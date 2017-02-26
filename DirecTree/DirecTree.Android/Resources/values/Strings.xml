@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">DirecTree.Android</string>
-    <string name="GoogleMapsKey">AIzaSyA0Rxl3RX_wBmq3FtJbdOb0pYIbWl4wVwg</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">DirecTree.Android</string>
+  <string name="GoogleMapsKey">AIzaSyA0Rxl3RX_wBmq3FtJbdOb0pYIbWl4wVwg</string>
   <string name="Drawer">DirecTree</string>
   <string name="CreditIcons">Appzgear, yupiramos from djvstock</string>
+  <string name="RememberMe">Remember Me</string>
+  <string name="SignUp">Sign up</string>
+  <string name="SignIn">Sign in</string>
+  <string name="UsernameHint">Username or Email</string>
+  <string name="PasswordHint">Password</string>
+  <string name="AuthFailure">Username or password incorrect</string>
 </resources>

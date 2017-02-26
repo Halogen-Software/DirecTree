@@ -21,6 +21,17 @@ namespace DirecTree.Core.ViewModels
             }
         }
 
+        private string _authText;
+        public string AuthText
+        {
+            get { return _authText; }
+            set
+            {
+                _authText = value;
+                RaisePropertyChanged(() => AuthText);
+            }
+        }
+
         private string _password;
         public string Password {
             get { return _password; }
@@ -39,7 +50,7 @@ namespace DirecTree.Core.ViewModels
                     vendorId = vendor.Id;
                     _isCredentialsValid = true;
                 }
-                if (Username.ToLower() == vendor.Email.ToLower() && Password == vendor.Password) {
+                if ((Username.ToLower() == vendor.Email.ToLower() || Username.ToLower() == vendor.Username.ToLower()) && Password == vendor.Password) {
                     vendorId = vendor.Id;
                     _isCredentialsValid = true;
                 }
@@ -48,9 +59,11 @@ namespace DirecTree.Core.ViewModels
             if (_isCredentialsValid)
             {
                 // Do something
+                AuthText = "Login is valid";
             }
             else {
                 // Throw validation message
+                AuthText = "Username or password incorrect";
             }
         }
     }

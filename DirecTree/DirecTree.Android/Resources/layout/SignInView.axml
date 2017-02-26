@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/vignetteBackGround"
     android:layout_width= "fill_parent"
@@ -16,10 +17,18 @@
     android:layout_height="1dp"
     android:layout_width="match_parent" 
     android:background="@color/DirectreeBackgroundColor"/>
+  <TextView
+    android:id="@+id/ValidationText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/AuthFailure"
+    android:textColor="#FF0000"
+    local:MvxBind="Text AuthText"
+    />
   <EditText
     android:layout_width="320dp"
     android:layout_height="40dp"
-    android:hint="Username or Email"
+    android:hint="@string/UsernameHint"
     android:textSize="16sp"
     android:background="@drawable/white_text_box"
     android:layout_marginTop="20dp"
@@ -27,11 +36,12 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:elevation="3dp"
+    local:MvxBind="Text Username"
       />
   <EditText
     android:layout_width="320dp"
     android:layout_height="40dp"
-    android:hint="Password"
+    android:hint="@string/PasswordHint"
     android:textSize="16sp"
     android:inputType="textPassword"
     android:background="@drawable/white_text_box"
@@ -39,6 +49,13 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:elevation="3dp"
+    local:MvxBind="Text Password"
+    />
+  <Checkbox
+    android:id="@+id/RememberMeCheckBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/RememberMe"
     />
   <LinearLayout
     android:layout_width= "wrap_content"
@@ -46,9 +63,10 @@
     android:orientation="horizontal"
     android:gravity="center_vertical">
   <Button
+    android:id="@+id/SignUpButton"
     android:layout_width="100dp"
     android:layout_height="46dp"
-    android:text="Sign up"
+    android:text="@string/SignUp"
     android:textSize="16sp"
     android:textColor="@color/DirectreeTextColor"
     android:layout_margin="5dp"
@@ -60,18 +78,15 @@
     android:layout_margin="5dp"
     android:background="@color/DirectreeBackgroundColor"/>
   <Button
+    android:id="@+id/SignInButton"
     android:layout_width="100dp"
     android:layout_height="46dp"
-    android:text="Sign in"
+    android:text="@string/SignIn"
     android:textSize="16sp"
     android:textColor="@color/DirectreeTextColor"
     android:layout_margin="5dp"
     android:background="@drawable/green_rounded_button"
+    local:MvxBind="Click ValidateCredentialsCommand"
     />
-
   </LinearLayout>
-  
-  
-  
-  
 </LinearLayout>

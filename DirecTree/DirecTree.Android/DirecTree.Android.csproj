@@ -250,8 +250,6 @@
     <AndroidResource Include="Resources\values\Colors.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\signinBackground.png" />
-    <AndroidResource Include="Resources\drawable\signinBackgroundBlurred.png" />
     <AndroidResource Include="Resources\drawable\white_text_box.xml" />
     <AndroidResource Include="Resources\drawable\green_rounded_button.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_loader.png" />
