@@ -4,6 +4,7 @@ using DirecTree.Core.ViewModels.Base;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Windows.Input;
+using DirecTree.Core.Util;
 
 namespace DirecTree.Core.ViewModels
 {
@@ -40,26 +41,32 @@ namespace DirecTree.Core.ViewModels
                 RaisePropertyChanged(() => Password);
             }
         }
+        private bool _isCredentialsValid = false;
+        public bool IsCredentialsValid {
+            get { return _isCredentialsValid; }
+            set {
+                _isCredentialsValid = value;
+                RaisePropertyChanged(() => IsCredentialsValid);
+            }
+        }
+
         public ICommand ValidateCredentialsCommand => new MvxCommand(ValidateCredentials);
 
         // This method needs to change when we implement an actual DB.
         public void ValidateCredentials() {
-            bool _isCredentialsValid = false;
             foreach (Vendor vendor in DevOptions.DevVendorList) {
-                if (Username.ToLower() == vendor.Username.ToLower() && Password == vendor.Password) {
-                    vendorId = vendor.Id;
-                    _isCredentialsValid = true;
-                }
                 if ((Username.ToLower() == vendor.Email.ToLower() || Username.ToLower() == vendor.Username.ToLower()) && Password == vendor.Password) {
                     vendorId = vendor.Id;
-                    _isCredentialsValid = true;
+                    StaticUtils.currentUser = vendor;
+                    IsCredentialsValid = true;
                 }
             }
 
-            if (_isCredentialsValid)
+            if (IsCredentialsValid)
             {
                 // Do something
                 AuthText = "Login is valid";
+                
             }
             else {
                 // Throw validation message

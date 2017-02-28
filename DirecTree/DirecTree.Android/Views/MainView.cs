@@ -14,6 +14,8 @@ using Android.Content;
 using DirecTree.Android.Views.Fragments;
 using Android.Support.V4.Widget;
 using DirecTree.Core.ViewModels;
+using MvvmCross.Binding.BindingContext;
+using DirecTree.Core.Util;
 
 namespace DirecTree.Android.Views
 {
@@ -37,6 +39,7 @@ namespace DirecTree.Android.Views
             SetContentView(Resource.Layout.MainView);
             HomeViewModel = DataContext as MainViewModel;
             var actionBar = SupportActionBar;
+            SetupBindings();
 
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
             _isBusyOverlay = FindViewById<LinearLayout>(Resource.Id.isBusyOverlay);
@@ -120,6 +123,19 @@ namespace DirecTree.Android.Views
             _isBusyOverlay.Visibility = ViewStates.Gone;
         }
 
+        private void NavigateToLocation(Position position)
+        {
+            LocationSyncView._longitude = position.Longitude;
+            LocationSyncView._latitude = position.Latitude;
+            _map.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(position.Latitude, position.Longitude)));
+            _map.AnimateCamera(CameraUpdateFactory.ZoomTo(15));
+            MarkerOptions currentLocationMarker = new MarkerOptions()
+                .SetPosition(new LatLng(position.Latitude, position.Longitude))
+                .SetTitle("My Location");
+            _map.AddMarker(currentLocationMarker);
+            _hasGpsEnabled = true;
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             _drawerToggle.OnOptionsItemSelected(item);
@@ -138,6 +154,35 @@ namespace DirecTree.Android.Views
                     HomeViewModel.NavigateToSignIn.Execute(null);
                     break;
             }
+        }
+
+        private bool _isCredentialsValid = false;
+        public bool IsCredentialsValid
+        {
+            get { return _isCredentialsValid; }
+            set
+            {
+                _isCredentialsValid = value;
+                if (_isCredentialsValid)
+                    ApplySignedInUser();
+            }
+        }
+
+        private void ApplySignedInUser() {
+            // ToDo: apply user properties to MainView
+            // ToDo: Zoom in on location
+            // ToDo: Add user as item in the side drawer
+            Position location = new Position();
+            location.Latitude = StaticUtils.currentUser.VendorLocation.GpsLatitude;
+            location.Longitude = StaticUtils.currentUser.VendorLocation.GpsLongitude;
+
+            NavigateToLocation(location);
+        }
+
+        private void SetupBindings() {
+            var _signInBindingSet = this.CreateBindingSet<MainView, SignInViewModel>();
+            _signInBindingSet.Bind(this).For(v => v.IsCredentialsValid).To(vm => vm.IsCredentialsValid).OneWay();
+            _signInBindingSet.Apply();
         }
     }
 }
