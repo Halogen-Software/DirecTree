@@ -32,13 +32,13 @@ namespace DirecTree.Android.Views
         private double _latitude;
         private ISharedPreferences _preferences;
         private FrameLayout _fragmentHolder;
+        private bool hasSignedIn { get; set; } = false;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
             HomeViewModel = DataContext as MainViewModel;
-            var actionBar = SupportActionBar;
             SetupBindings();
 
             _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.leftDrawerLayout);
@@ -123,6 +123,12 @@ namespace DirecTree.Android.Views
             _isBusyOverlay.Visibility = ViewStates.Gone;
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+        }
+
         private void NavigateToLocation(Position position)
         {
             LocationSyncView._longitude = position.Longitude;
@@ -156,33 +162,40 @@ namespace DirecTree.Android.Views
             }
         }
 
-        private bool _isCredentialsValid = false;
-        public bool IsCredentialsValid
-        {
-            get { return _isCredentialsValid; }
-            set
-            {
-                _isCredentialsValid = value;
-                if (_isCredentialsValid)
-                    ApplySignedInUser();
-            }
-        }
-
         private void ApplySignedInUser() {
             // ToDo: apply user properties to MainView
-            // ToDo: Zoom in on location
             // ToDo: Add user as item in the side drawer
             Position location = new Position();
             location.Latitude = StaticUtils.currentUser.VendorLocation.GpsLatitude;
             location.Longitude = StaticUtils.currentUser.VendorLocation.GpsLongitude;
 
+            // Centers in on the signed in persons stored location
             NavigateToLocation(location);
+
+            // Sets title bar to name of the signed in users company
+            SupportActionBar.Title = StaticUtils.currentUser.CompanyName;
         }
 
         private void SetupBindings() {
             var _signInBindingSet = this.CreateBindingSet<MainView, SignInViewModel>();
-            _signInBindingSet.Bind(this).For(v => v.IsCredentialsValid).To(vm => vm.IsCredentialsValid).OneWay();
             _signInBindingSet.Apply();
         }
+
+        protected override void OnPostResume()
+        {
+            base.OnPostResume();
+
+            if (!hasSignedIn)
+            {
+                if (StaticUtils.currentUser != null)
+                {
+                    ApplySignedInUser();
+
+                    hasSignedIn = true;
+                }
+            }
+
+        }
     }
+    
 }
