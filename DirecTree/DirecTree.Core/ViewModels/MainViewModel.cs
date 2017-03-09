@@ -13,18 +13,13 @@ namespace DirecTree.Core.ViewModels
         }
 
         private string value;
-        private List<string> _sideBarListItems;
-        public List<string> SideBarListItems
-        {
-            get { return _sideBarListItems; }
-            set { SetProperty(ref _sideBarListItems, value); }
-        }
-
+        
         private void SetupListItems()
         {
             SideBarListItems = new List<string>();
 
             SideBarListItems.Add("Home");
+            SideBarListItems.Add("View profile");
             SideBarListItems.Add("Sign in");
         }
     }

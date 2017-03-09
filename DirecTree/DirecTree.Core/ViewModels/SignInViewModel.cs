@@ -66,7 +66,7 @@ namespace DirecTree.Core.ViewModels
             {
                 // Do something
                 AuthText = "Login is valid";
-                
+
             }
             else {
                 // Throw validation message

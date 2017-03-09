@@ -16,6 +16,7 @@ using Android.Support.V4.Widget;
 using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using DirecTree.Core.Util;
+using System.Collections.Generic;
 
 namespace DirecTree.Android.Views
 {
@@ -148,15 +149,19 @@ namespace DirecTree.Android.Views
             return base.OnOptionsItemSelected(item);
         }
 
-        private void NavigateSideBar(int position)
+        private void NavigateSideBar(int menuItem)
         {
-            switch (position)
+            switch (menuItem)
             {
                 case 0:
                     if(_fragmentHolder.Visibility != ViewStates.Gone)
                         _fragmentHolder.Visibility = ViewStates.Gone;
                     break;
                 case 1:
+                    HomeViewModel.NavigateToProfileView.Execute(null);
+                    
+                    break;
+                case 2:
                     HomeViewModel.NavigateToSignIn.Execute(null);
                     break;
             }

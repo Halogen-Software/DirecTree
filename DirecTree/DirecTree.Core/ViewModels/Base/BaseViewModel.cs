@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Core.ViewModels;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace DirecTree.Core.ViewModels.Base
@@ -21,6 +22,19 @@ namespace DirecTree.Core.ViewModels.Base
 
         private void LaunchSignInActivity() {
             ShowViewModel<SignInViewModel>();
+        }
+
+        public ICommand NavigateToProfileView => new MvxCommand(LaunchProfileViewActivity);
+
+        private void LaunchProfileViewActivity() {
+            ShowViewModel<VendorProfileDetailViewModel>();
+        }
+
+        private List<string> _sideBarListItems;
+        public List<string> SideBarListItems
+        {
+            get { return _sideBarListItems; }
+            set { SetProperty(ref _sideBarListItems, value); }
         }
     }
 }
