@@ -127,6 +127,11 @@ namespace DirecTree.Android.Views
         protected override void OnResume()
         {
             base.OnResume();
+            if ((Vendor)_preferences.GetObject(SettingsView.PreviouslySignedInUser, null))
+            {
+                StaticUtils.currentUser = SettingsView.PreviouslySignedInUser;
+                ApplySignedInUser();
+            }
 
         }
 

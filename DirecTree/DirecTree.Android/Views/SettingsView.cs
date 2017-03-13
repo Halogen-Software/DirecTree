@@ -7,6 +7,7 @@ using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Views;
+using DirecTree.Core.Models;
 
 namespace DirecTree.Android.Views
 {
@@ -14,17 +15,13 @@ namespace DirecTree.Android.Views
     public class SettingsView : MvxActivity
     {
         public static string DefaultPreferences => "defaultPreferences";
+        public static string KEEP_USER_SIGNED_IN => "KUSI";
+        public static Vendor PreviouslySignedInUser { get; set; }
         public static string RETRIEVE_LOCATION_ON_STARTUP => "RLOS";
         private ISharedPreferences _preferences;
         private ISharedPreferencesEditor _editor;
         private CheckBox _syncLocationCheckBox;
-        public bool RetrieveLocationOnStartUp {
-            get {
-                return _preferences.GetBoolean(RETRIEVE_LOCATION_ON_STARTUP, false);
-            }
-            set {
-            }
-        }
+        public bool RetrieveLocationOnStartUp => _preferences.GetBoolean(RETRIEVE_LOCATION_ON_STARTUP, false);
 
         protected override void OnCreate(Bundle bundle)
         {

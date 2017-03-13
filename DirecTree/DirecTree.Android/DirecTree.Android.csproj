@@ -218,7 +218,9 @@
     <AndroidResource Include="Resources\layout\SignInView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\VendorProfileDetailView.axml" />
+    <AndroidResource Include="Resources\layout\VendorProfileDetailView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml">
@@ -270,6 +272,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable\ProfilePic.png" />
+    <AndroidResource Include="Resources\drawable\ProfileBanner.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
