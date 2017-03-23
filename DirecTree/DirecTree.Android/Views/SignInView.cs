@@ -65,14 +65,12 @@ namespace DirecTree.Android.Views.Fragments
             {
                 _editor.PutBoolean(SettingsView.KEEP_USER_SIGNED_IN, true);
                 SettingsView.PreviouslySignedInUser = StaticUtils.currentUser;
-                _editor.PutObject(SettingsView.PreviouslySignedInUser);
                 _editor.Apply();
             }
             else
             {
                 _editor.PutBoolean(SettingsView.KEEP_USER_SIGNED_IN, false);
                 SettingsView.PreviouslySignedInUser = null;
-                _editor.PutObject(SettingsView.PreviouslySignedInUser);
                 _editor.Apply();
             }
             this.Finish();

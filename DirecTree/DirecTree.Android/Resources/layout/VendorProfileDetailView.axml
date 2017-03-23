@@ -39,12 +39,10 @@
           android:layout_gravity="right"/>
         </RelativeLayout>
     </LinearLayout>
-    </LinearLayout>
-
-    <RelativeLayout
+        <RelativeLayout
       android:layout_width="155dp"
       android:layout_height="155dp"
-      android:layout_marginTop="60dp"
+      android:layout_marginTop="10dp"
       android:layout_marginLeft="20dp"
       android:background="@color/DirectreeTextUnderlineColor"
       android:elevation="5dp">
@@ -55,6 +53,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
     </RelativeLayout>
+    </LinearLayout>
+
+
     
     <!--Vendor Name-->
     <LinearLayout

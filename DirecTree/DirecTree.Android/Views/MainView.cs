@@ -17,6 +17,7 @@ using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using DirecTree.Core.Util;
 using System.Collections.Generic;
+using DirecTree.Core.Models;
 
 namespace DirecTree.Android.Views
 {
@@ -127,11 +128,6 @@ namespace DirecTree.Android.Views
         protected override void OnResume()
         {
             base.OnResume();
-            if ((Vendor)_preferences.GetObject(SettingsView.PreviouslySignedInUser, null))
-            {
-                StaticUtils.currentUser = SettingsView.PreviouslySignedInUser;
-                ApplySignedInUser();
-            }
 
         }
 
