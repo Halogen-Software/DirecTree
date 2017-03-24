@@ -11,13 +11,10 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using DirecTree.Android.Views.Base;
 using Android.Content;
-using DirecTree.Android.Views.Fragments;
 using Android.Support.V4.Widget;
 using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using DirecTree.Core.Util;
-using System.Collections.Generic;
-using DirecTree.Core.Models;
 
 namespace DirecTree.Android.Views
 {

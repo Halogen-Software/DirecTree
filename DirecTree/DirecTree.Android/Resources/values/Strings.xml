@@ -11,4 +11,5 @@
   <string name="UsernameHint">Username or Email</string>
   <string name="PasswordHint">Password</string>
   <string name="AuthFailure">Username or password incorrect</string>
+  <string name="NoVendorSignedIn">Mmmm... There doesn\'t seem to be anyone signed in</string>
 </resources>

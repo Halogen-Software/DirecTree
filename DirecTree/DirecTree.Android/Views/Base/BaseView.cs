@@ -4,10 +4,8 @@ using Android.Support.V4.App;
 using Android.Views;
 using DirecTree.Core.ViewModels;
 using DirecTree.Core.ViewModels.Base;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
-using MvvmCross.Platform;
 
 namespace DirecTree.Android.Views.Base
 {

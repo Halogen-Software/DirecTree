@@ -10,8 +10,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    
     <!--Company Name-->
     <LinearLayout
+      android:id="@+id/CompanyNameLayout"
       android:layout_width="match_parent"
       android:layout_height="200dp">
     <LinearLayout
@@ -21,12 +23,12 @@
       android:orientation="vertical"
       android:elevation="3dp"
       >
-
-      <RelativeLayout
+      <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:background="@color/DirectreeWhiteHaze">
         <TextView
+          android:id="@+id/CompanyNameLabel"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text=""
@@ -37,7 +39,7 @@
           android:textSize="26sp"
           local:MvxBind="Text CompanyName"
           android:layout_gravity="right"/>
-        </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
         <RelativeLayout
       android:layout_width="155dp"
@@ -55,10 +57,9 @@
     </RelativeLayout>
     </LinearLayout>
 
-
-    
     <!--Vendor Name-->
     <LinearLayout
+      android:id="@+id/VendorNameLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -80,6 +81,7 @@
 
     <!--Vendor Surname-->
     <LinearLayout
+      android:id="@+id/VendorSurnameLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -101,6 +103,7 @@
     
     <!--Address-->
     <LinearLayout
+      android:id="@+id/AddressLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -122,6 +125,7 @@
 
     <!--Email-->
     <LinearLayout
+      android:id="@+id/EmailLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -143,6 +147,7 @@
 
     <!--Profile Pic String-->
     <LinearLayout
+      android:id="@+id/ProfilePicLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -164,6 +169,7 @@
     
     <!--Background pic string-->
     <LinearLayout
+      android:id="@+id/BackgroundPicLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -183,7 +189,9 @@
       />
     </LinearLayout>
 
+    <!--GPS Details-->
     <LinearLayout
+      android:id="@+id/GpsLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -215,5 +223,6 @@
         android:gravity="right"
       />
     </LinearLayout>
+    
   </LinearLayout>
 </ScrollView>

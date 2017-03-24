@@ -10,16 +10,23 @@ namespace DirecTree.Core.ViewModels
     {
         private Vendor CurrentUser => StaticUtils.currentUser;
         public VendorProfileDetailViewModel(){
-            CompanyName = CurrentUser.CompanyName;
-            VendorName = CurrentUser.VendorName;
-            VendorSurname = CurrentUser.VendorSurname;
-            Address = CurrentUser.Address;
-            Email = CurrentUser.Email;
-            ProfilePic = CurrentUser.ProfilePic;
-            ProfileBackground = CurrentUser.ProfileBackground;
-            ProfileBackgroundColor = CurrentUser.ProfileBackgroundColor;
-            VendorLocation = CurrentUser.VendorLocation;
-            ServiceList = CurrentUser.ServiceList;
+            if (CurrentUser != null)
+            {
+                CompanyName = CurrentUser.CompanyName;
+                VendorName = CurrentUser.VendorName;
+                VendorSurname = CurrentUser.VendorSurname;
+                Address = CurrentUser.Address;
+                Email = CurrentUser.Email;
+                ProfilePic = CurrentUser.ProfilePic;
+                ProfileBackground = CurrentUser.ProfileBackground;
+                ProfileBackgroundColor = CurrentUser.ProfileBackgroundColor;
+                VendorLocation = CurrentUser.VendorLocation;
+                ServiceList = CurrentUser.ServiceList;
+            }
+            else
+            {
+                CompanyName = "NoSignedInUser";
+            }
         }
 
         public string CompanyName { get; set; }

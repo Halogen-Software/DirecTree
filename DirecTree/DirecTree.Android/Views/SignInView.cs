@@ -2,7 +2,6 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Widget;
-using DirecTree.Android.Views.Base;
 using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Views;
