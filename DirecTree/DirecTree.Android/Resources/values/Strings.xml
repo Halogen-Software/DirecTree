@@ -13,4 +13,5 @@
   <string name="AuthFailure">Username or password incorrect</string>
   <string name="NoVendorSignedIn">Mmmm... There doesn\'t seem to be anyone signed in</string>
   <string name="ServicesProvided">Services Provided</string>
+  <string name="Edit">Edit</string>
 </resources>

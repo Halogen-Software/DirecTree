@@ -2,6 +2,8 @@ using DirecTree.Core.Models;
 using DirecTree.Core.Util;
 using DirecTree.Core.ViewModels.Base;
 using System.Collections.Generic;
+using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
 
 namespace DirecTree.Core.ViewModels
 {
@@ -40,5 +42,12 @@ namespace DirecTree.Core.ViewModels
         public string ProfileBackgroundColor { get; set; }
         public Location VendorLocation { get; set; }
         public List<VendorService> ServiceList { get; set; }
+
+        public ICommand EditVendorCommand => new MvxCommand(NavigateToEditVendorView);
+
+        public void NavigateToEditVendorView()
+        {
+            ShowViewModel<EditVendorViewModel>();
+        }
     }
 }
