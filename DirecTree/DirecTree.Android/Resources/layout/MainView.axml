@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  
+  <android.support.v4.widget.DrawerLayout
+    android:id="@+id/leftDrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainView">
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <fragment
+        android:id="@+id/googleMapsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.MapFragment" />
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp"
+        >
+        <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Find a service"
+          />
+      </FrameLayout>
+      <LinearLayout
+        android:id="@+id/isBusyOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/vignetteBackGround"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <Imageview
+          android:id="@+id/informationIcon"
+          android:layout_width="120dp"
+          android:layout_height="120dp"
+          android:src="@drawable/info"
+          android:gravity="center"
+          android:layout_margin="10dp"
+          android:elevation="3dp"
+          />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Please wait... We're trying to find you"
+          android:textSize="30sp"
+          android:gravity="center"
+          />
+      </LinearLayout>
+      
+      <FrameLayout
+        android:id="@+id/fragmentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+      
+    </RelativeLayout>
+    <Mvx.MvxListView
+      android:id="@+id/sideBarMenuList"
+      android:layout_width="250dp"
+      android:layout_height="match_parent"
+      android:layout_gravity="start"
+      android:divider="#B4BFC9"
+      android:dividerHeight="1dp"
+      android:background="#D5DCE3"
+      android:textColor="#4C6374"
+      local:MvxBind="ItemsSource SideBarListItems" />
+
+  </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:local="http://schemas.android.com/apk/res-auto">
+
+  <item
+      android:id="@+id/action_Recenter"
+      local:showAsAction="always"
+      android:icon="@drawable/ic_loader"
+      android:title="Recenter"/>
+  <item
+      android:id="@+id/action_Settings"
+      local:showAsAction="always"
+      android:icon="@drawable/ic_settings"
+      android:title="Settings"
+      local:MvxBind="Click NavigateToSettings">
+  </item>
+
+</menu>

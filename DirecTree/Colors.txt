@@ -1,0 +1,9 @@
+ToolBar:
+#B4BFC9
+
+DefaultText:
+#4C6374
+
+DefaultViewBackground:
+#D5DCE3
+

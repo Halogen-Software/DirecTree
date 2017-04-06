@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="DirectreeBackgroundColor" type="color">#B4BFC9</item>
+  <item name="DirectreeTextColor" type="color">#4C6374</item>
+  <item name="DirectreeTextUnderlineColor" type="color">#42CBF4</item>
+  <item name="DirectreeConfirmationColor" type="color">#56b2d8</item>
+  <item name="DirectreeWhiteHaze" type="color">#30FFFFFF</item>
+</resources>
