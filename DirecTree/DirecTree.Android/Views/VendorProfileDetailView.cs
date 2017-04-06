@@ -4,9 +4,9 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 
-namespace DirecTree.Android.Views.Fragments
+namespace DirecTree.Android.Views
 {
-    [Activity(Label = "You Profile", Theme = "@style/MyTheme.MainTheme")]
+    [Activity(Label = "Your Profile", Theme = "@style/MyTheme.MainTheme")]
     public class VendorProfileDetailView : MvxActivity
     {
         private TextView _companyName;

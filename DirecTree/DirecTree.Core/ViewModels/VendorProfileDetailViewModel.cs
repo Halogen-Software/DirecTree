@@ -47,7 +47,8 @@ namespace DirecTree.Core.ViewModels
 
         public void NavigateToEditVendorView()
         {
-            ShowViewModel<EditVendorViewModel>();
+            // Todo: this needs to be an ID once the DB stuff is done
+            ShowViewModel<VendorEditViewModel>(CompanyName);
         }
     }
 }

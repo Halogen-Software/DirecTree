@@ -197,6 +197,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseFragment.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
+    <Compile Include="Views\VendorEditView.cs" />
     <Compile Include="Views\VendorProfileDetailView.cs" />
     <Compile Include="Views\SignInView.cs" />
     <Compile Include="Views\LocationSyncView.cs" />
@@ -222,6 +223,10 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\template_service_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\VendorEditView.axml" />
+    <AndroidResource Include="Resources\layout\template_service_list_edit.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -11,68 +11,56 @@
     android:layout_height="match_parent"
     android:background="@drawable/vignetteBackGround"
     android:orientation="vertical">
-     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-      android:layout_height="wrap_content"
-      android:layout_width="wrap_content"
-      android:padding="5dp"
-      android:text="@string/Edit"
-      local:MvxBind="Click EditVendorCommand"
-      />
-      </LinearLayout>
-    
+
     <!--Company Name-->
     <LinearLayout
-      android:id="@+id/CompanyNameLayout"
+      android:id="@+id/CompanyNameEditLayout"
       android:layout_width="match_parent"
       android:layout_height="200dp">
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="150dp"
-      android:background="@drawable/ProfileBanner"
-      android:orientation="vertical"
-      android:elevation="3dp"
-      >
       <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:background="@color/DirectreeWhiteHaze">
-        <TextView
-          android:id="@+id/CompanyNameLabel"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text=""
-          android:paddingTop="10dp"
-          android:paddingBottom="10dp"
-          android:paddingLeft="15dp"
-          android:paddingRight="15dp"
-          android:textSize="26sp"
-          local:MvxBind="Text CompanyName"
-          android:layout_gravity="right"/>
-        </LinearLayout>
-    </LinearLayout>
-        <RelativeLayout
-      android:layout_width="155dp"
-      android:layout_height="155dp"
-      android:layout_marginTop="10dp"
-      android:layout_marginLeft="20dp"
-      android:background="@color/DirectreeTextUnderlineColor"
-      android:elevation="5dp">
-      <ImageView
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="@drawable/ProfilePic"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"/>
-    </RelativeLayout>
+        android:background="@drawable/ProfileBanner"
+        android:orientation="vertical"
+        android:elevation="3dp"
+      >
+        <LinearLayout
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:background="@color/DirectreeWhiteHaze">
+          <EditText
+            android:id="@+id/CompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="26sp"
+            local:MvxBind="Text CompanyName"
+            android:layout_gravity="right"/>
+        </LinearLayout>
+      </LinearLayout>
+      <RelativeLayout
+    android:layout_width="155dp"
+    android:layout_height="155dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:background="@color/DirectreeTextUnderlineColor"
+    android:elevation="5dp">
+        <ImageView
+          android:layout_width="150dp"
+          android:layout_height="150dp"
+          android:src="@drawable/ProfilePic"
+          android:layout_marginTop="5dp"
+          android:layout_marginLeft="5dp"/>
+      </RelativeLayout>
     </LinearLayout>
 
     <!--Vendor Name-->
     <LinearLayout
-      android:id="@+id/VendorNameLayout"
+      android:id="@+id/VendorNameEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -84,8 +72,9 @@
         android:text="Vendor Name:"
         android:gravity="left"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/VendorName"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text=""
         local:MvxBind="Text VendorName"
@@ -95,7 +84,7 @@
 
     <!--Vendor Surname-->
     <LinearLayout
-      android:id="@+id/VendorSurnameLayout"
+      android:id="@+id/VendorSurnameEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -107,21 +96,22 @@
         android:text="Vendor Surname:"
         android:gravity="left"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/VendorSurname"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text=""
         local:MvxBind="Text VendorSurname"
         android:gravity="right"
       />
     </LinearLayout>
-    
+
     <!--Address-->
     <LinearLayout
-      android:id="@+id/AddressLayout"
+      android:id="@+id/AddressEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="horizontal"
+      android:orientation="vertical"
       android:paddingLeft="10dp"
       >
       <TextView
@@ -130,10 +120,15 @@
         android:text="Address:"
         android:gravity="left"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/Address"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         local:MvxBind="Text Address"
         android:gravity="right"
       />
@@ -141,7 +136,7 @@
 
     <!--Email-->
     <LinearLayout
-      android:id="@+id/EmailLayout"
+      android:id="@+id/EmailEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -153,8 +148,9 @@
         android:text="Email:"
         android:gravity="left"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/Email"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text=""
         local:MvxBind="Text Email"
@@ -162,9 +158,9 @@
       />
     </LinearLayout>
 
-    <!--Profile Pic String-->
+    <!--Profile Pic Button-->
     <LinearLayout
-      android:id="@+id/ProfilePicLayout"
+      android:id="@+id/ProfilePicEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -176,18 +172,19 @@
         android:text="Profile pic URL:"
         android:gravity="left"
       />
-      <TextView
+      <Button
+        android:id="@+id/ChooseProfilePicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        local:MvxBind="Text ProfilePic"
+        local:MvxBind="Text ProfilePic; Click ChooseProfilePic"
         android:gravity="right"
       />
     </LinearLayout>
-    
-    <!--Background pic string-->
+
+    <!--Background pic Button-->
     <LinearLayout
-      android:id="@+id/BackgroundPicLayout"
+      android:id="@+id/BackgroundPicEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -199,18 +196,19 @@
         android:text="Background URL:"
         android:gravity="left"
       />
-      <TextView
+      <Button
+        android:id="@+id/ProfileBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        local:MvxBind="Text ProfileBackground"
+        local:MvxBind="Text ProfileBackground; Click ChooseBackGroundPhoto"
         android:gravity="right"
       />
     </LinearLayout>
 
     <!--GPS Details-->
     <LinearLayout
-      android:id="@+id/GpsLayout"
+      android:id="@+id/GpsEditLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
@@ -222,8 +220,9 @@
         android:text="GPS Long / Lat:"
         android:gravity="left"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/GpsLongitude"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text=""
         local:MvxBind="Text VendorLocation.GpsLongitude"
@@ -232,39 +231,51 @@
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" "
+        android:text=" / "
         android:gravity="right"
       />
-      <TextView
-        android:layout_width="wrap_content"
+      <EditText
+        android:id="@+id/GpsLatitude"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text=""
         local:MvxBind="Text VendorLocation.GpsLatitude"
         android:gravity="right"
       />
     </LinearLayout>
-    
+
     <!--Services List-->
     <LinearLayout
-        android:id="@+id/ServicesLayout"
+        android:id="@+id/ServicesEditLayout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         android:paddingLeft="10dp">
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/ServicesProvided"
-          android:textSize="20sp"
-          android:textColor="@color/DirectreeTextColor"
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ServicesProvided"
+        android:textSize="20sp"
+        android:textColor="@color/DirectreeTextColor"
       />
-        <Mvx.MvxListView
-            android:layout_height="150dp"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            local:MvxBind="ItemsSource ServiceList"
-            local:MvxItemTemplate="@layout/template_service_list"/>
+      <Mvx.MvxListView
+          android:layout_height="150dp"
+          android:layout_width="match_parent"
+          android:layout_marginTop="10dp"
+          local:MvxBind="ItemsSource ServiceList"
+          local:MvxItemTemplate="@layout/template_service_list_edit"/>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+          android:id="@+id/AddService"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="+"
+          android:textColor="@color/DirectreeTextColor"
+          local:MvxBind="Click AddService"/>
+      </LinearLayout>
     </LinearLayout>
   </LinearLayout>
 </ScrollView>
