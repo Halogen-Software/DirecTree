@@ -1,3 +1,4 @@
+using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -39,9 +40,9 @@ namespace DirecTree.Android.Views.Fragments
         private void SetupRememberMe()
         {
             if (_preferences.GetBoolean(SettingsView.KEEP_USER_SIGNED_IN, false))
-                _rememberMeCheckBox.Checked = false;
-            else
                 _rememberMeCheckBox.Checked = true;
+            else
+                _rememberMeCheckBox.Checked = false;
         }
 
         private bool _isCredentialsValid = false;
@@ -64,12 +65,14 @@ namespace DirecTree.Android.Views.Fragments
             {
                 _editor.PutBoolean(SettingsView.KEEP_USER_SIGNED_IN, true);
                 SettingsView.PreviouslySignedInUser = StaticUtils.currentUser;
+                _editor.PutString(SettingsView.SIGNED_IN_USER, StaticUtils.currentUser.Username);
                 _editor.Apply();
             }
             else
             {
                 _editor.PutBoolean(SettingsView.KEEP_USER_SIGNED_IN, false);
                 SettingsView.PreviouslySignedInUser = null;
+                _editor.PutString(SettingsView.SIGNED_IN_USER, String.Empty);
                 _editor.Apply();
             }
             this.Finish();

@@ -62,13 +62,8 @@ namespace DirecTree.Core.ViewModels
                 }
             }
 
-            if (IsCredentialsValid)
+            if (!IsCredentialsValid)
             {
-                // Do something
-                AuthText = "Login is valid";
-
-            }
-            else {
                 // Throw validation message
                 AuthText = "Username or password incorrect";
             }

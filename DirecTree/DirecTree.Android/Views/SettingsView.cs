@@ -18,6 +18,7 @@ namespace DirecTree.Android.Views
         public static string KEEP_USER_SIGNED_IN => "KUSI";
         public static Vendor PreviouslySignedInUser { get; set; }
         public static string RETRIEVE_LOCATION_ON_STARTUP => "RLOS";
+        public static string SIGNED_IN_USER => "SIU";
         private ISharedPreferences _preferences;
         private ISharedPreferencesEditor _editor;
         private CheckBox _syncLocationCheckBox;

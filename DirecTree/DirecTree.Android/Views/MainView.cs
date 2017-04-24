@@ -12,6 +12,8 @@ using Plugin.Geolocator.Abstractions;
 using DirecTree.Android.Views.Base;
 using Android.Content;
 using Android.Support.V4.Widget;
+using DirecTree.Core.DevTests;
+using DirecTree.Core.Models;
 using DirecTree.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using DirecTree.Core.Util;
@@ -58,7 +60,29 @@ namespace DirecTree.Android.Views
             _longitude = LocationSyncView._longitude;
             _latitude = LocationSyncView._latitude;
             _sideBarMenu.ItemClick += NavigateSideBarCommand;
+        }
 
+        private bool IsUserSignedIn()
+        {
+            if (!_preferences.GetString(SettingsView.SIGNED_IN_USER, string.Empty).Equals(string.Empty))
+            {
+                SetCurrentUser();
+            }
+
+            return !_preferences.GetString(SettingsView.SIGNED_IN_USER, string.Empty).Equals(string.Empty);
+        }
+
+        private void SetCurrentUser()
+        {
+            // Todo: This will change when we implement actual DB
+
+            foreach (Vendor vendor in DevOptions.DevVendorList)
+            {
+                if (vendor.Username.Equals(_preferences.GetString(SettingsView.SIGNED_IN_USER, string.Empty)))
+                {
+                    StaticUtils.currentUser = vendor;
+                }
+            }
         }
 
         public void NavigateSideBarCommand(object sender, AdapterView.ItemClickEventArgs e)
@@ -77,6 +101,7 @@ namespace DirecTree.Android.Views
         public void OnMapReady(GoogleMap googleMap)
         {
             _map = googleMap;
+            ApplySignedInUser();
         }
 
         private async void NavigateToLocation()
@@ -168,15 +193,22 @@ namespace DirecTree.Android.Views
         private void ApplySignedInUser() {
             // ToDo: apply user properties to MainView
             // ToDo: Add user as item in the side drawer
-            Position location = new Position();
-            location.Latitude = StaticUtils.currentUser.VendorLocation.GpsLatitude;
-            location.Longitude = StaticUtils.currentUser.VendorLocation.GpsLongitude;
 
-            // Centers in on the signed in persons stored location
-            NavigateToLocation(location);
+            if (IsUserSignedIn())
+            {
+                Position location = new Position();
+                location.Latitude = StaticUtils.currentUser.VendorLocation.GpsLatitude;
+                location.Longitude = StaticUtils.currentUser.VendorLocation.GpsLongitude;
 
-            // Sets title bar to name of the signed in users company
-            SupportActionBar.Title = StaticUtils.currentUser.CompanyName;
+                // Centers in on the signed in persons stored location
+                NavigateToLocation(location);
+
+                // Sets title bar to name of the signed in users company
+                SupportActionBar.Title = StaticUtils.currentUser.CompanyName;
+
+                // Closes side bar
+                _drawerLayout.CloseDrawer((int) GravityFlags.Left);
+            }
         }
 
         private void SetupBindings() {
